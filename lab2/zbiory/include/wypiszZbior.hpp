@@ -1,0 +1,1 @@
+extern void wypiszZbior(const std::string msg, int tab_size, int tab[]);

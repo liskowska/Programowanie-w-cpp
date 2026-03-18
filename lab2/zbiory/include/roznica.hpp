@@ -1,0 +1,1 @@
+extern void roznica(int size_A, int A[], int size_B, int B[], int wynik[], int& size_wynik);

@@ -1,0 +1,5 @@
+if(EXISTS "/home/agaton14/Documents/JiNP/lab2/example/test_sum[1]_tests.cmake")
+  include("/home/agaton14/Documents/JiNP/lab2/example/test_sum[1]_tests.cmake")
+else()
+  add_test(test_sum_NOT_BUILT test_sum_NOT_BUILT)
+endif()

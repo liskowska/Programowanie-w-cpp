@@ -1,0 +1,7 @@
+add_test([=[SumaTest.LiczbyDodatnieIUjemne]=]  /home/agaton14/Documents/JiNP/lab2/zbiory/unit_tests [==[--gtest_filter=SumaTest.LiczbyDodatnieIUjemne]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[SumaTest.LiczbyDodatnieIUjemne]=]  PROPERTIES WORKING_DIRECTORY /home/agaton14/Documents/JiNP/lab2/zbiory SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[SumaTest.PrzepełnienieTablicyWynikowej]=]  /home/agaton14/Documents/JiNP/lab2/zbiory/unit_tests [==[--gtest_filter=SumaTest.PrzepełnienieTablicyWynikowej]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[SumaTest.PrzepełnienieTablicyWynikowej]=]  PROPERTIES WORKING_DIRECTORY /home/agaton14/Documents/JiNP/lab2/zbiory SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[SumaTest.ZbioryPuste]=]  /home/agaton14/Documents/JiNP/lab2/zbiory/unit_tests [==[--gtest_filter=SumaTest.ZbioryPuste]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[SumaTest.ZbioryPuste]=]  PROPERTIES WORKING_DIRECTORY /home/agaton14/Documents/JiNP/lab2/zbiory SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  unit_tests_TESTS SumaTest.LiczbyDodatnieIUjemne [==[SumaTest.PrzepełnienieTablicyWynikowej]==] SumaTest.ZbioryPuste)

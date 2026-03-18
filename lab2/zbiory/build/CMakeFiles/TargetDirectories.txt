@@ -1,0 +1,5 @@
+/home/agaton14/Documents/JiNP/lab2/zbiory/build/CMakeFiles/main.dir
+/home/agaton14/Documents/JiNP/lab2/zbiory/build/CMakeFiles/unit_tests.dir
+/home/agaton14/Documents/JiNP/lab2/zbiory/build/CMakeFiles/test.dir
+/home/agaton14/Documents/JiNP/lab2/zbiory/build/CMakeFiles/edit_cache.dir
+/home/agaton14/Documents/JiNP/lab2/zbiory/build/CMakeFiles/rebuild_cache.dir

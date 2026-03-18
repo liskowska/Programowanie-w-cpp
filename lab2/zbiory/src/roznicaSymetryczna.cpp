@@ -1,0 +1,23 @@
+#include <iostream>
+#include <zawiera.hpp>
+
+using namespace std;
+
+const int MAX_SIZE = 100;
+
+void roznicaSymetryczna(int size_A, int A[], int size_B, int B[], int wynik[], int& size_wynik){
+    size_wynik = 0;
+    for(int i = 0; i < size_A; i++){
+        if (!zawiera(B, size_B, A[i])){
+            wynik[size_wynik] = A[i];
+            size_wynik++;
+        }
+    }
+
+    for(int i = 0; i < size_B; i++){
+        if (!zawiera(A, size_A, B[i])){
+            wynik[size_wynik] = B[i];
+            size_wynik++;
+        }
+    }
+}

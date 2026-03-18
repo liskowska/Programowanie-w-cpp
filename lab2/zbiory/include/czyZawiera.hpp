@@ -1,0 +1,1 @@
+extern bool czyZawiera(int size_A, int A[], int size_B, int B[]);

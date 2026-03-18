@@ -1,0 +1,1 @@
+extern bool czyRowne(int size_A, int A[], int size_B, int B[]);
