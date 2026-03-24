@@ -1,3 +1,0 @@
-/home/agaton14/Documents/JiNP/lab2/example/CMakeFiles/main.dir
-/home/agaton14/Documents/JiNP/lab2/example/CMakeFiles/edit_cache.dir
-/home/agaton14/Documents/JiNP/lab2/example/CMakeFiles/rebuild_cache.dir
