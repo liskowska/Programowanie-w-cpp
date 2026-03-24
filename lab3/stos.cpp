@@ -54,6 +54,45 @@ void Stack__print(int stack[]){
     cout << endl;
 }
 
+void moveMaxToBottom(int stack[]) {
+    int tempStack[N] = {0};      // Stos na elementy, które nie są maksimami
+    int maxElements[N] = {0};    // Stos na znalezione wartości maksymalne
+    int currentMax = -1;
+    int val;
+
+    int findMaxStack[N] = {0};
+    while ((val = Stack__pop(stack)) != -2) {
+        if (val > currentMax) {
+            currentMax = val;
+        }
+        Stack__push(findMaxStack, val);
+    }
+
+    if (currentMax == -1) return;
+
+    while ((val = Stack__pop(findMaxStack)) != -2) {
+        if (val == currentMax) {
+            Stack__push(maxElements, val);
+        } else {
+            Stack__push(tempStack, val);
+        }
+    }
+
+    while ((val = Stack__pop(maxElements)) != -2) {
+        Stack__push(stack, val);
+    }
+
+    int reverseStack[N] = {0};
+    while ((val = Stack__pop(tempStack)) != -2) {
+        Stack__push(reverseStack, val);
+    }
+    
+    while ((val = Stack__pop(reverseStack)) != -2) {
+        Stack__push(stack, val);
+    }
+}
+    
+
 int main(){
     int stack[N] = {0};
 
@@ -71,5 +110,15 @@ int main(){
         Stack__print(stack);
         if(popped == -2) break;
     }
+
+    i = 2;
+    while(true){
+        if(Stack__push(stack, i) == -1) break;
+        else Stack__print(stack);
+        i+=2;
+    }
+
+    moveMaxToBottom(stack);
+    Stack__print(stack);
     return 0;
 }
