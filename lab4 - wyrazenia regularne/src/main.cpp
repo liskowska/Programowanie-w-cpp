@@ -52,14 +52,11 @@ int main() {
             cout << "Nieznana komenda: " << cmd << endl;
         }
 
-        // czyszczenie flagi po Ctrl+D z wnętrza funkcji
-// --- TO MUSI TU BYĆ ---
         if (cin.eof()) {
             cin.clear(); // Czyści flagi błędów i EOF
-            // Na niektórych systemach (szczególnie Linux/Unix) to wystarczy.
-            // Jeśli dalej przeskakuje, musimy "puknąć" w stdin:
             clearerr(stdin); 
-        }    }
+        }    
+    }
 
     return 0;
 }
