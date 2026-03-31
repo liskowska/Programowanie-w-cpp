@@ -25,26 +25,26 @@ add_executable(main ${SOURCE}) #  Jako wynik kompilacji podanych plików źród�
 target_include_directories(main PUBLIC include) # Określamy katalogi, w których kompilator ma szukać plików nagłówkowych
 
 # testy
-# enable_testing()
-# find_package(GTest REQUIRED)
-# include(GoogleTest)
+enable_testing()
+find_package(GTest REQUIRED)
+include(GoogleTest)
 
-# # 1. Dodajemy executable - pliki które testuję
-# add_executable(unit_tests
-#     tests/test_grep
-#     tests/test_sort
-#     tests/test_tail
+# 1. Dodajemy executable - pliki które testuję
+add_executable(unit_tests
+    tests/test_grep
+    tests/test_sort
+    tests/test_tail
 
-#     src/grep.cpp
-#     src/sort.cpp
-#     src/tail.cpp
-# )
+    src/grep.cpp
+    src/sort.cpp
+    src/tail.cpp
+)
 
-# # 2. Gdzie są nagłówki (.hpp) dla testów
-# target_include_directories(unit_tests PUBLIC include)
+# 2. Gdzie są nagłówki (.hpp) dla testów
+target_include_directories(unit_tests PUBLIC include)
 
-# # 3. Linkowanie bibliotek (używamy nazwy unit_tests, bo tak nazwano executable wyżej)
-# target_link_libraries(unit_tests GTest::gtest GTest::gtest_main)
+# 3. Linkowanie bibliotek (używamy nazwy unit_tests, bo tak nazwano executable wyżej)
+target_link_libraries(unit_tests GTest::gtest GTest::gtest_main)
 
-# # 4. Rejestrujemy testy w systemie
-# gtest_discover_tests(unit_tests)
+# 4. Rejestrujemy testy w systemie
+gtest_discover_tests(unit_tests)

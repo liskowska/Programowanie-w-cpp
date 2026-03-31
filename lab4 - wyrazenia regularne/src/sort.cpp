@@ -19,6 +19,36 @@ string get_column(string line, int k) {
     return ""; // Jeśli kolumna k nie istnieje w tej linii
 }
 
+void sort_logic(string input[], int line_count, string ans[], bool sort_numeric, int k_col) {
+    for (int i = 0; i < line_count; i++) ans[i] = input[i];
+
+    for (int i = 0; i < line_count - 1; i++) {
+        for (int j = 0; j < line_count - i - 1; j++) {
+            bool swap_needed = false;
+            string val1 = get_column(ans[j], k_col);
+            string val2 = get_column(ans[j + 1], k_col);
+
+            if (sort_numeric) {
+                try {
+                    int num1 = (val1 != "") ? stoi(val1) : 0;
+                    int num2 = (val2 != "") ? stoi(val2) : 0;
+                    if (num1 > num2) swap_needed = true;
+                } catch (...) {
+                    if (val1 > val2) swap_needed = true;
+                }
+            } else {
+                if (val1 > val2) swap_needed = true;
+            }
+
+            if (swap_needed) {
+                string temp = ans[j];
+                ans[j] = ans[j + 1];
+                ans[j + 1] = temp;
+            }
+        }
+    }
+}
+
 void cmd_sort(string args[], int n) {
     string input[M];
     string ans[M];
@@ -45,39 +75,7 @@ void cmd_sort(string args[], int n) {
         }
     }
 
-    for (int i = 0; i < line_count; i++) ans[i] = input[i];
-
-    //bubble sort
-    for (int i = 0; i < line_count - 1; i++) {
-        for (int j = 0; j < line_count - i - 1; j++) {
-            bool swap_needed = false;
-
-            string val1 = get_column(ans[j], k_col);
-            string val2 = get_column(ans[j + 1], k_col);
-
-            if (sort_numeric) {
-                // Sortowanie liczbowe (-n)
-                try {
-                    // Zamieniamy na inty, jeśli się da
-                    int num1 = (val1 != "") ? stoi(val1) : 0;
-                    int num2 = (val2 != "") ? stoi(val2) : 0;
-                    if (num1 > num2) swap_needed = true;
-                } catch (...) {
-                    // Jeśli to nie liczba, sortujemy alfabetycznie jako fallback
-                    if (val1 > val2) swap_needed = true;
-                }
-            } else {
-                // Sortowanie alfabetyczne (domyślne)
-                if (val1 > val2) swap_needed = true;
-            }
-
-            if (swap_needed) {
-                string temp = ans[j];
-                ans[j] = ans[j + 1];
-                ans[j + 1] = temp;
-            }
-        }
-    }
+    sort_logic(input, line_count, ans, sort_numeric, k_col);
 
     cout << endl;
     for (int i = 0; i < line_count; i++) {

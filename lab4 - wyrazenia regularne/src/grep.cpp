@@ -37,7 +37,7 @@ int cmd_n(string input[], int n, string ans[], string pattern_str, int parsed_ar
     
     // bitowy OR (|), aby połączyć flagi
     auto flags = regex_constants::ECMAScript;
-    if (parsed_args[0] == 1) { // flaga -i (ignore case)
+    if (parsed_args[0] == 1) { // flaga -i 
         flags |= regex_constants::icase;
     }
 
