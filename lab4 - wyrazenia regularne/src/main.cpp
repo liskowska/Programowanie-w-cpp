@@ -15,7 +15,7 @@ int main() {
     string line;
 
     while (true) {
-        cout << "Podaj komendę: ";
+        cout << "Podaj komendę lub wpisz CTRL + d aby zakończyć działanie programu: " << endl;
         
         if (!getline(cin, line)) {
             cout << "\nProgram zakończył działanie" << endl;
@@ -52,9 +52,14 @@ int main() {
             cout << "Nieznana komenda: " << cmd << endl;
         }
 
-        // Ważne: czyścimy flagi po Ctrl+D z wnętrza funkcji
-        cin.clear();
-    }
+        // czyszczenie flagi po Ctrl+D z wnętrza funkcji
+// --- TO MUSI TU BYĆ ---
+        if (cin.eof()) {
+            cin.clear(); // Czyści flagi błędów i EOF
+            // Na niektórych systemach (szczególnie Linux/Unix) to wystarczy.
+            // Jeśli dalej przeskakuje, musimy "puknąć" w stdin:
+            clearerr(stdin); 
+        }    }
 
     return 0;
 }
