@@ -1,0 +1,24 @@
+grep
+    -i nie patrzy na małe i duże litery
+
+    -c sprawdza ile linii matchuje z patternem (zwraca liczbe)
+
+    -n zwraca zwyklego grepa ale przed linią wypisuje na której linii jesteśmy
+
+    -w zwraca linie ktore DOKŁADNIE pasują do słowa (np. grep kot zwróciłoby 'kot' i 'koty' i 'niekoty', a grep -w zwroci tylko 'koty')
+
+kolejność: iwnc
+
+tail - domyslnie wyswietla 10 ostatnich linii tekstu
+    -n3 / -3 trzy ostatnie linie tekstu
+
+    +3 wszystkie linie od trzeciej włącznie
+
+    -c 7/ -c -7 wyswietla ostatnie siedem bitow (znakow) pliku
+
+    -c +7 wyśwetla wszystkie bity (znaki) pomijając 7 pierwszych bitów/znaków
+
+sort sortuje alfabetycznie rosnaco
+    -k sortuje po kolumnie np -k2 po drugiej kolumnie
+
+    -n sortuje liczby
