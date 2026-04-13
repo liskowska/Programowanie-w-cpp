@@ -34,7 +34,6 @@ int main(int argc, char* argv[]) {
 
     EncryptionFunc currentTask = encryptXOR;
 
-    // Jeśli flaga jest aktywna, wywołujemy mechanizm "podmiany"
     if (vulnerabilityEnabled) {
         vulnerability(&currentTask);
     }
