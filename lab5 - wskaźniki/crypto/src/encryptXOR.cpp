@@ -21,7 +21,7 @@ void encryptXOR(const string& inputPath, const string& outputPath) {
     char* buffer = new char[BUFFER_SIZE];
 
     if (!inFile.is_open()) {
-    cerr << "[WARNING] Nie moge otworzyc pliku wejsciowego: " << inputPath << endl;
+    cerr << "[WARNING] Bład otwarcia pliku wejsciowego: " << inputPath << endl;
     return;
     }
 
