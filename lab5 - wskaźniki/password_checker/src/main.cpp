@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// Definiujemy typ "wskaźnik na funkcję, która zwraca bool i bierze string*"
+// typ "wskaźnik na funkcję, która zwraca bool i bierze string*"
 typedef bool (*Validator)(string*);
 
 int main(){
