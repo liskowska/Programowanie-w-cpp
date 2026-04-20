@@ -1,3 +1,4 @@
+#include <iostream>
 #include <sstream>
 #include <iomanip>
 #include <format>
@@ -13,6 +14,11 @@
 
 using namespace std;
 using namespace MapDirection;
+
+RectangularMap::RectangularMap(int new_n, int new_m){
+    n_ = new_n;
+    m_ = new_m;
+};
 
 bool RectangularMap::isOccupied(Vector2d position) {
     for (auto& car : cars) {
@@ -68,8 +74,19 @@ string RectangularMap::toString(){
     lowerLeft.y(0);
 
     Vector2d upperRight; 
-    upperRight.x(n - 1);
-    upperRight.y(m-1);
+    upperRight.x(n_ - 1);
+    upperRight.y(m_ - 1);
 
     return visualizer.draw(lowerLeft, upperRight);    
+}
+
+void RectangularMap::addCar(const Car& car) {
+    Vector2d pos = const_cast<Car&>(car).position();
+
+    if (pos.x() >= 0 && pos.x() < n_ && pos.y() >= 0 && pos.y() < m_) {
+        
+        if (!isOccupied(pos)) {
+            cars.push_back(car);
+        }
+    }
 }

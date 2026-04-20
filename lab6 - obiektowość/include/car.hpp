@@ -15,6 +15,7 @@ class Car{
     Vector2d position_;
 
     public:
+    Car(Vector2d newPosition, Direction newDirection);
     Vector2d position();
     Direction direction();
 

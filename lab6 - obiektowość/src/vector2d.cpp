@@ -4,15 +4,18 @@
 
 using namespace std;
 
+Vector2d::Vector2d(int x, int y) {
+    this->x_ = x;
+    this->y_ = y;
+}
+
+Vector2d::Vector2d() : x_(0), y_(0) {}
+
 int Vector2d::x() {return x_;}
 int Vector2d::y() {return y_;}
 
 void Vector2d::x(int new_x){x_ = new_x;}
 void Vector2d::y(int new_y){y_ = new_y;}
-void Vector2d::vector2d(int new_x, int new_y){
-    x_ = new_x;
-    y_ = new_y;
-}
 
 bool Vector2d::operator==(Vector2d other){
     if (x_ == other.x_ && y_ == other.y_) return true;
@@ -40,7 +43,7 @@ Vector2d Vector2d::add(Vector2d other) {
     return vector2d;
 }
 
-Vector2d Vector2d::substract(Vector2d other) {
+Vector2d Vector2d::subtract(Vector2d other) {
     Vector2d vector2d;
     vector2d.x(x_ - other.x_);
     vector2d.y(y_ - other.y_);

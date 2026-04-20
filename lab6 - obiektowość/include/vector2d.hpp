@@ -9,12 +9,14 @@ class Vector2d{
         int y_;
     
     public:
+    Vector2d();
+    Vector2d(int x, int y);
+
     int x();
     int y();
 
     void x(int new_x);
     void y(int new_y);
-    void vector2d(int new_x, int new_y);
 
     bool operator==(Vector2d other);
     string toString();
@@ -22,7 +24,7 @@ class Vector2d{
     bool precedes(Vector2d other);
     bool follows(Vector2d other);
     Vector2d add(Vector2d other) ;
-    Vector2d substract(Vector2d other);
+    Vector2d subtract(Vector2d other);
     Vector2d upperRight(Vector2d other);
     Vector2d lowerLeft(Vector2d other);
     Vector2d opposite();

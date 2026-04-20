@@ -15,15 +15,17 @@ using namespace MapDirection;
 
 class RectangularMap {
     private:
-    int n;
-    int m;
+    int n_;
+    int m_;
     vector<Car> cars;
 
     public:
 
+    RectangularMap(int new_n, int new_m);
     bool isOccupied(Vector2d position);
     static vector<MoveDirection> parse(int argc, char* argv[]);
     void run(const vector<MoveDirection>& moves);
     string toString();
     Car* objectAt(Vector2d position);
+    void addCar(const Car& car);
 };

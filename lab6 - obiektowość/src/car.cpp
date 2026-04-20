@@ -11,6 +11,11 @@ using namespace MapDirection;
 Vector2d Car::position(){return position_;}
 Direction Car::direction(){return direction_;}
 
+Car::Car(Vector2d newPosition, Direction newDirection) {
+    this->position_ = newPosition;
+    this->direction_ = newDirection;
+}
+
 string Car::toString(){
     ostringstream oss;
     oss << "Direction: " << direction_ << ". Position: " << position_.toString() << ".";
@@ -46,7 +51,7 @@ void Car::checkPosition(int step) {
     int newX = position_.x();
     int newY = position_.y();
 
-    // 1. Obliczamy gdzie auto CHCIAŁOBY być
+    // pozycja auta bez granic mapy
     switch(direction_) {
         case MapDirection::NORTH: newY += step; break;
         case MapDirection::SOUTH: newY -= step; break;
@@ -54,13 +59,11 @@ void Car::checkPosition(int step) {
         case MapDirection::WEST:  newX -= step; break;
     }
 
-    // 2. Sprawdzamy granice mapy (0,0) do (4,4)
+    // jezeli nowa pozycja jest poza mapa to obrot orientacji o 180 stopni
     if (newX >= 0 && newX <= 4 && newY >= 0 && newY <= 4) {
         position_.x(newX);
         position_.y(newY);
     } else {
-        // 3. Jeśli poza mapą -> odwracamy orientację o 180 stopni
-        // Wywołujemy next dwa razy, żeby obrócić się o 180 stopni
         direction_ = MapDirection::next(MapDirection::next(direction_));
     }
 }
