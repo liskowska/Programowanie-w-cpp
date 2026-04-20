@@ -1,3 +1,5 @@
+#pragma once
+
 #include <sstream>
 #include <iomanip>
 #include <format>
@@ -23,5 +25,5 @@ class RectangularMap {
     static vector<MoveDirection> parse(int argc, char* argv[]);
     void run(const vector<MoveDirection>& moves);
     string toString();
-    Car* RectangularMap::objectAt(Vector2d position);
+    Car* objectAt(Vector2d position);
 };

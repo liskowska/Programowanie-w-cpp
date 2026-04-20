@@ -1,3 +1,5 @@
+#pragma once
+
 #include<string>
 #include<sstream>
 #include "mapDirection.hpp"
@@ -14,9 +16,10 @@ class Car{
 
     public:
     Vector2d position();
-    Direction Direction();
+    Direction direction();
 
     string toString();
     bool isAt(Vector2d position);
     void move(MoveDirection direction);
+    void checkPosition(int step);
 };

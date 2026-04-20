@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef MAP_DIRECTION_HPP
 #define MAP_DIRECTION_HPP
 
