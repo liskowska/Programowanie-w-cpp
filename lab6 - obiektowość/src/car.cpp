@@ -17,9 +17,10 @@ Car::Car(Vector2d newPosition, Direction newDirection) {
 }
 
 string Car::toString(){
-    ostringstream oss;
-    oss << "Direction: " << direction_ << ". Position: " << position_.toString() << ".";
-    return oss.str();
+    // ostringstream oss;
+    // oss << "Direction: " << direction_ << ". Position: " << position_.toString() << ".";
+    // return oss.str();
+    return "^";
 }
 
 bool Car::isAt(Vector2d position){
