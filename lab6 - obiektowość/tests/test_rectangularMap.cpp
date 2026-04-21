@@ -58,7 +58,7 @@ TEST(MapTest, BoundaryTest) {
     
     Car* c = map.objectAt(Vector2d(2, 4));
     ASSERT_NE(c, nullptr);
-    // kierunek powinien być teraz SOUTH (2)
-    // MapDirection::NORTH to zazwyczaj 0, SOUTH to 2.
-    EXPECT_EQ((int)c->direction(), 2); 
+    // kierunek powinien być teraz SOUTH (1)
+    // MapDirection::NORTH to 0, SOUTH to 1. (taka kolejnosc w enumie)
+    EXPECT_EQ((int)c->direction(), 1); 
 }
